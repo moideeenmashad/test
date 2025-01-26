@@ -26,7 +26,12 @@
       class="d-flex align-items-center justify-content-center"
       style="height: 109vh"
     >
-      <button class="btn btn-light" id="btnToggle" disabled style="color: black !important;">
+      <button
+        class="btn btn-light"
+        id="btnToggle"
+        
+        style="color: black !important"
+      >
         Hello Brother
       </button>
       <div class="container" id="container">
@@ -42,13 +47,13 @@
                         src="img/addu_thai.jpg"
                         alt="Image 1"
                         class="img-fluid"
-                        style="border-radius: 4px !important;"
+                        style="border-radius: 4px !important"
                       />
                     </div>
                     <div class="swiper-slide">
                       <img
                         src="img/addu_thai-2.jpg"
-                        style="border-radius: 4px !important;"
+                        style="border-radius: 4px !important"
                         alt="Image 2"
                         class="img-fluid"
                       />
@@ -56,7 +61,7 @@
                     <div class="swiper-slide">
                       <img
                         src="img/addu_thai-3.jpg"
-                        style="border-radius: 4px !important;"
+                        style="border-radius: 4px !important"
                         alt="Image 3"
                         class="img-fluid"
                       />
@@ -68,14 +73,16 @@
                   <!-- <div class="swiper-button-next"></div>
                   <div class="swiper-button-prev"></div> -->
                 </div>
-                <h3 class="mt-3" style="color: #ececec !important;">Happy Birthday Brother</h3>
+                <h3 class="mt-3" style="color: #ececec !important">
+                  Happy Birthday Brother
+                </h3>
                 <p>
                   Happy Birthday! Wishing you a fantastic day filled with joy,
                   laughter, and wonderful memories. It’s been over four years of
                   great friendship, and I’m grateful for every moment. Here’s to
                   celebrating you today!
                 </p>
-                <hr>
+                <hr />
                 <small
                   >" <i>A surprise gift awaits you soon</i>" - Moideen
                   Mashad</small
@@ -90,28 +97,32 @@
     <script>
       function enableButtonAtMidnight() {
         const targetTime = new Date();
-        targetTime.setHours(23, 59, 59, 999);
+        targetTime.setHours(1, 0, 59, 999); // Target time set to 1:00:59
 
         const now = new Date();
         const timeDifference = targetTime - now;
 
         if (timeDifference > 0) {
+          // Wait until the target time
           setTimeout(() => {
             document.getElementById("btnToggle").disabled = false;
           }, timeDifference);
         } else {
+          // If the current time is already past the target time, unlock the button
           document.getElementById("btnToggle").disabled = false;
         }
       }
 
+      // Event listener for button click
       document.getElementById("btnToggle").addEventListener("click", () => {
         const container = document.getElementById("container");
         const button = document.getElementById("btnToggle");
 
-        container.style.display = "block";
-        button.style.display = "none";
+        container.style.display = "block"; // Show the container
+        button.style.display = "none"; // Hide the button
       });
 
+      // Call function to enable button
       enableButtonAtMidnight();
     </script>
     <script
