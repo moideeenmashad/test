@@ -29,7 +29,6 @@
       <button
         class="btn btn-light"
         id="btnToggle"
-        
         style="color: black !important"
       >
         Hello Brother
@@ -113,6 +112,15 @@
         }
       }
 
+      // Check if the current date is 28th January or later
+      function checkDateAndHideContainer() {
+        const currentDate = new Date();
+        if (currentDate.getMonth() === 0 && currentDate.getDate() >= 28) {
+          // 28th January or later
+          document.getElementById("container").style.display = "none"; // Hide the container
+        }
+      }
+
       // Event listener for button click
       document.getElementById("btnToggle").addEventListener("click", () => {
         const container = document.getElementById("container");
@@ -122,8 +130,9 @@
         button.style.display = "none"; // Hide the button
       });
 
-      // Call function to enable button
+      // Call functions
       enableButtonAtMidnight();
+      checkDateAndHideContainer();
     </script>
     <script
       src="https://code.jquery.com/jquery-3.7.1.js"
