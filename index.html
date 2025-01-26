@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <!--  -->
@@ -22,18 +22,86 @@
       class="d-flex align-items-center justify-content-center"
       style="height: 100vh"
     >
-      <div class="container">
+      <button class="btn btn-light" id="btnToggle" disabled>
+        Hello Brother
+      </button>
+      <div class="container" id="container">
         <div class="row align-items-center justify-content-center">
-          <div class="col-12 col-sm-12 col-lg-4 col-lg-4">
+          <div class="col-12 col-sm-12 col-lg-4">
             <div class="card">
               <div class="card-body">
-                <h1>Hello</h1>
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                      <img
+                        src="img/addu_thai.jpg"
+                        alt="Image 1"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="img/addu_thai-2.jpg"
+                        alt="Image 2"
+                        class="img-fluid"
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        src="img/example3.jpg"
+                        alt="Image 3"
+                        class="img-fluid"
+                      />
+                    </div>
+                  </div>
+                  <!-- Pagination -->
+                  <div class="swiper-pagination"></div>
+                  <!-- Navigation -->
+                  <!-- <div class="swiper-button-next"></div>
+                  <div class="swiper-button-prev"></div> -->
+                </div>
+                <h4 class="mt-2">Happy Birthday Brother</h4>
+                <p>
+                  Happy Birthday! Wishing you a fantastic day filled with joy,
+                  laughter, and wonderful memories. It’s been over four years of
+                  great friendship, and I’m grateful for every moment. Here’s to
+                  celebrating you today!
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      function enableButtonAtMidnight() {
+        const targetTime = new Date();
+        targetTime.setHours(23, 12, 59, 999);
+
+        const now = new Date();
+        const timeDifference = targetTime - now;
+
+        if (timeDifference > 0) {
+          setTimeout(() => {
+            document.getElementById("btnToggle").disabled = false;
+          }, timeDifference);
+        } else {
+          document.getElementById("btnToggle").disabled = false;
+        }
+      }
+
+      document.getElementById("btnToggle").addEventListener("click", () => {
+        const container = document.getElementById("container");
+        const button = document.getElementById("btnToggle");
+
+        container.style.display = "block";
+        button.style.display = "none";
+      });
+
+      enableButtonAtMidnight();
+    </script>
     <script
       src="https://code.jquery.com/jquery-3.7.1.js"
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -45,5 +113,23 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Initialize Swiper
+      const swiper = new Swiper(".swiper", {
+        loop: true, // Enables infinite scrolling
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        autoplay: {
+          delay: 3000, // Auto-slide delay in milliseconds
+          disableOnInteraction: false, // Keep autoplay active after user interaction
+        },
+      });
+    </script>
   </body>
 </html>

@@ -2,3 +2,10 @@ body{
     background: rgb(72,71,71);
 background: radial-gradient(circle, rgba(72,71,71,1) 0%, rgba(0,0,0,1) 100%);
 }
+.container {
+    display: none;
+  }
+
+  /* h4,p{
+   
+  } */
