@@ -1,6 +1,5 @@
 body{
-    background: rgb(72,71,71);
-background: radial-gradient(circle, rgba(72,71,71,1) 0%, rgba(0,0,0,1) 100%);
+   background-color: #212121 !important;
 }
 .container {
     display: none;
@@ -9,3 +8,13 @@ background: radial-gradient(circle, rgba(72,71,71,1) 0%, rgba(0,0,0,1) 100%);
   /* h4,p{
    
   } */
+   .card{
+    background-color: #2F2F2F;
+   }
+   *{
+    color: #ececec ;
+   }
+   hr {
+    border: 1px solid white; /* Sets the border color of the hr to white */
+    background-color: white; /* Optionally sets the background color */
+  }
